@@ -2,6 +2,9 @@ import json
 
 
 def get_data(path):
+    """
+    Получение данных из файла
+    """
     if path == 0:
         return path
     else:
@@ -11,6 +14,9 @@ def get_data(path):
 
 
 def get_filtered_data(data):
+    """
+    Поиск исполненных операций
+    """
     filtered_data = []
     for operation in data:
         if operation.get('state') == 'EXECUTED':
@@ -20,11 +26,17 @@ def get_filtered_data(data):
 
 
 def get_sorted_data(data):
+    """
+    Сортировка операций по дате
+    """
     sorted_data = sorted(data, key=lambda x: x['date'], reverse=True)
     return sorted_data[0:5]
 
 
 def get_formate_data(data):
+    """
+    Вывод списка операций в правильной форме
+    """
     formate_data = []
     for operation in data:
         date = f"{operation['date'][8:10]}.{operation['date'][5:7]}.{operation['date'][0:4]}"
