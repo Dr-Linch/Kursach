@@ -3,5 +3,3 @@ venv/
 *.pyc
 .idea/
 .pytest_cache
-tests
-tests/
